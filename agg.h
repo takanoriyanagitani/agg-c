@@ -26,6 +26,9 @@ void* initstat(const void* key, void** map, int (*cmp)(const void* a, const void
   }
   memset(stat, 0, 32);
   void* searched = tsearch(key, map, cmp);
+  printf("searched: %p\n", searched);
+  printf("stat:     %p\n", stat);
+  printf("node val: %p\n", *((void**)searched));
   return searched;
 }
 
